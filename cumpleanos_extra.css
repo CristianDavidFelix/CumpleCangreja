@@ -1,0 +1,273 @@
+/* Archivo CSS adicional para efectos extra - cumpleanos_extra.css */
+
+/* Efectos de aurora boreal */
+.aurora {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.3;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 182, 193, 0.1) 40%,
+        rgba(255, 105, 180, 0.1) 50%,
+        rgba(255, 182, 193, 0.1) 60%,
+        transparent 70%
+    );
+    background-size: 200% 200%;
+    animation: auroraMove 20s ease-in-out infinite;
+}
+
+@keyframes auroraMove {
+    0%, 100% {
+        background-position: 0% 0%;
+        transform: translateY(0px);
+    }
+    25% {
+        background-position: 100% 50%;
+        transform: translateY(-20px);
+    }
+    50% {
+        background-position: 50% 100%;
+        transform: translateY(10px);
+    }
+    75% {
+        background-position: 0% 50%;
+        transform: translateY(-10px);
+    }
+}
+
+/* Corazones pulsantes */
+.heart-pulse {
+    position: fixed;
+    font-size: 40px;
+    animation: heartPulse 2s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 5;
+}
+
+@keyframes heartPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+}
+
+/* Texto brillante */
+.glowing-text {
+    animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow: 
+            0 0 5px #ff69b4,
+            0 0 10px #ff69b4,
+            0 0 15px #ff69b4,
+            0 0 20px #ff1493;
+    }
+    to {
+        text-shadow: 
+            0 0 10px #ff69b4,
+            0 0 20px #ff69b4,
+            0 0 30px #ff69b4,
+            0 0 40px #ff1493;
+    }
+}
+
+/* Ondas de amor */
+.love-wave {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 3px solid rgba(255, 105, 180, 0.3);
+    border-radius: 50%;
+    animation: loveWave 4s ease-out infinite;
+}
+
+@keyframes loveWave {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Mariposas volando */
+.butterfly {
+    position: fixed;
+    font-size: 25px;
+    animation: butterflyFly 25s linear infinite;
+    pointer-events: none;
+    z-index: 3;
+}
+
+@keyframes butterflyFly {
+    0% {
+        transform: translateX(-100px) translateY(50vh) rotate(0deg);
+    }
+    25% {
+        transform: translateX(25vw) translateY(20vh) rotate(90deg);
+    }
+    50% {
+        transform: translateX(50vw) translateY(70vh) rotate(180deg);
+    }
+    75% {
+        transform: translateX(75vw) translateY(30vh) rotate(270deg);
+    }
+    100% {
+        transform: translateX(calc(100vw + 100px)) translateY(50vh) rotate(360deg);
+    }
+}
+
+/* Lluvia de pétalos */
+.petal {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #ffb6c1, #ff69b4);
+    border-radius: 50% 0;
+    animation: petalFall 15s linear infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+@keyframes petalFall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Efecto de cristal en las tarjetas */
+.glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 8px 32px 0 rgba(255, 105, 180, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Animación de escribir */
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid #ff1493;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #ff1493; }
+}
+
+/* Efecto de partículas mágicas */
+.magic-particle {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: #ffd700;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: magicFloat 8s infinite ease-in-out;
+    z-index: 1;
+}
+
+@keyframes magicFloat {
+    0%, 100% {
+        transform: translateY(100vh) translateX(0px) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(90vh) translateX(20px) scale(1);
+    }
+    50% {
+        transform: translateY(50vh) translateX(-30px) scale(1.5);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(10vh) translateX(10px) scale(1);
+    }
+    100% {
+        transform: translateY(-10vh) translateX(0px) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Resplandor de cumpleaños */
+.birthday-glow {
+    position: relative;
+}
+
+.birthday-glow::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, #ff6b9d, #ffd700, #ff1493, #ff69b4);
+    border-radius: inherit;
+    z-index: -1;
+    animation: glowRotate 3s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes glowRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Efecto de ondulación en botones */
+.ripple-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-effect:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.ripple-effect:active:after {
+    width: 300px;
+    height: 300px;
+}
